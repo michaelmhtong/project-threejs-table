@@ -11,7 +11,7 @@ const Experience = () => {
         environment="city"
         shadows={{
           type: "accumulative",
-          color: "#85ffbd",
+          color: "#999999",
           colorBlend: 2,
           opacity: 2,
         }}
