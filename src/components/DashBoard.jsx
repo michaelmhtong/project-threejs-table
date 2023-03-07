@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { useConfigurator } from "../contexts/Configurator";
 export const DashBoard = () => {
-  const { legs, setLegs } = useConfigurator();
+  const { legs, setLegs, legsColor, setLegsColor } = useConfigurator();
   return (
     <Box
       sx={{
@@ -21,16 +21,29 @@ export const DashBoard = () => {
       }}
       p={3}
     >
-      <Box className="glass" p={3}>
-        <FormControl>
-          <FormLabel>Legs Layout</FormLabel>
-          <RadioGroup value={legs} onChange={(e) => setLegs(parseInt(e.target.value))}>
-            <FormControlLabel value={0} control={<Radio />} label="Standard" />
-            <FormControlLabel value={1} control={<Radio />} label="Solid" />
-            <FormControlLabel value={2} control={<Radio />} label="Design" />
-          </RadioGroup>
-        </FormControl>
-      </Box>
+      <Stack spacing={3}>
+        <Box className="glass" p={3}>
+          <FormControl>
+            <FormLabel>Legs Layout</FormLabel>
+            <RadioGroup value={legs} onChange={(e) => setLegs(parseInt(e.target.value))}>
+              <FormControlLabel value={0} control={<Radio />} label="Standard" />
+              <FormControlLabel value={1} control={<Radio />} label="Solid" />
+              <FormControlLabel value={2} control={<Radio />} label="Design" />
+            </RadioGroup>
+          </FormControl>
+        </Box>
+        <Box className="glass" p={3}>
+          <FormControl>
+            <FormLabel>Legs Color</FormLabel>
+            <RadioGroup value={legsColor} onChange={(e) => setLegsColor(e.target.value)}>
+              <FormControlLabel value={"#777777"} control={<Radio />} label="Black" />
+              <FormControlLabel value={"#ECECEC"} control={<Radio />} label="Chrome" />
+              <FormControlLabel value={"#C9BD71"} control={<Radio />} label="Gold" />
+              <FormControlLabel value={"#C9A3B9"} control={<Radio />} label="Pink Gold" />
+            </RadioGroup>
+          </FormControl>
+        </Box>
+      </Stack>
     </Box>
   );
 };
