@@ -1,7 +1,9 @@
 import { OrbitControls, Stage } from "@react-three/drei";
+import { useConfigurator } from "../contexts/Configurator";
 import { Table } from "./Table";
 
 const Experience = () => {
+  const { legs } = useConfigurator(); // re-render the stage & shadow when legs change
   return (
     <>
       <Stage

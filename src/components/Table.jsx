@@ -13,7 +13,7 @@ export function Table(props) {
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Plate.geometry} material={materials.Plate} />
+      <mesh geometry={nodes.Plate.geometry} material={materials.Plate} castShadow />
 
       {/* leg option 1 */}
       {legs === 0 && (
@@ -22,11 +22,13 @@ export function Table(props) {
             geometry={nodes.Legs01Left.geometry}
             material={materials.Metal}
             position={[-1.5, 0, 0]}
+            castShadow
           />
           <mesh
             geometry={nodes.Legs01Right.geometry}
             material={materials.Metal}
             position={[1.5, 0, 0]}
+            castShadow
           />
         </>
       )}
@@ -38,11 +40,13 @@ export function Table(props) {
             geometry={nodes.Legs02Left.geometry}
             material={materials.Metal}
             position={[-1.5, 0, 0]}
+            castShadow
           />
           <mesh
             geometry={nodes.Legs02Right.geometry}
             material={materials.Metal}
             position={[1.5, 0, 0]}
+            castShadow
           />
         </>
       )}
@@ -54,11 +58,13 @@ export function Table(props) {
             geometry={nodes.Legs03Left.geometry}
             material={materials.Metal}
             position={[-1.5, 0, 0]}
+            castShadow
           />
           <mesh
             geometry={nodes.Legs03Right.geometry}
             material={materials.Metal}
             position={[1.5, 0, 0]}
+            castShadow
           />
         </>
       )}
