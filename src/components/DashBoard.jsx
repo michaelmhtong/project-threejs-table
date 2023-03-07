@@ -11,7 +11,8 @@ import {
 } from "@mui/material";
 import { useConfigurator } from "../contexts/Configurator";
 export const DashBoard = () => {
-  const { legs, setLegs, legsColor, setLegsColor } = useConfigurator();
+  const { legs, setLegs, legsColor, setLegsColor, tableWidth, setTableWidth } = useConfigurator();
+
   return (
     <Box
       sx={{
@@ -22,6 +23,21 @@ export const DashBoard = () => {
       p={3}
     >
       <Stack spacing={3}>
+        <Box className="glass" p={3}>
+          <FormControl>
+            <FormLabel>Table width</FormLabel>
+            <Slider
+              sx={{
+                width: "200px",
+              }}
+              min={50}
+              max={200}
+              value={tableWidth}
+              onChange={(e) => setTableWidth(e.target.value)}
+              valueLabelDisplay="auto"
+            />
+          </FormControl>
+        </Box>
         <Box className="glass" p={3}>
           <FormControl>
             <FormLabel>Legs Layout</FormLabel>
